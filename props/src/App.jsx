@@ -1,122 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Card from './components/Card'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const data = [
+  {
+    "img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "followers": 12540,
+    "following": 542,
+    "username": "sophia_writes",
+    "caption": "Morning coffee and fresh ideas ☕✨",
+    "content": "Started the day with a strong coffee and a notebook full of plans. Sometimes the smallest routines create the biggest impact."
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "followers": 8970,
+    "following": 312,
+    "username": "travelwithalex",
+    "caption": "Lost in the mountains 🏔️",
+    "content": "Spent the weekend hiking through breathtaking mountain trails. The views were incredible and the fresh air was exactly what I needed."
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "followers": 21450,
+    "following": 785,
+    "username": "fitness_jane",
+    "caption": "Consistency beats motivation 💪",
+    "content": "A good workout doesn't require perfect conditions. Show up, do the work, and let consistency create the results."
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    "followers": 15680,
+    "following": 468,
+    "username": "tech_raj",
+    "caption": "Building something exciting 🚀",
+    "content": "Working on a new web application using modern technologies. Every bug solved feels like a small victory."
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+    "followers": 18420,
+    "following": 623,
+    "username": "foodie_emma",
+    "caption": "Homemade pasta night 🍝",
+    "content": "Tried a new pasta recipe today and it turned out amazing. Fresh ingredients and simple techniques make all the difference."
+  }
+]
+const App = () => {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <div className='parent'>
+      {
+        data.map((ele, idx) => {
+          return <Card name={ele.username} myimg={ele.img} caption={ele.caption} content={ele.content} follower={ele.followers} following={ele.following} />
+        })
+      }
+    </div>
   )
 }
+
 
 export default App
