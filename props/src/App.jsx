@@ -1,6 +1,5 @@
 import Card from './components/Card'
 
-
 const data = [
   {
     "img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
@@ -51,6 +50,8 @@ const App = () => {
           return <Card name={ele.username} myimg={ele.img} caption={ele.caption} content={ele.content} follower={ele.followers} following={ele.following} />
         })
       }
+
+      
     </div>
   )
 }
